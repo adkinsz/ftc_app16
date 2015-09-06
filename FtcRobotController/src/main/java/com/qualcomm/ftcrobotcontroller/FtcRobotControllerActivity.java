@@ -103,6 +103,30 @@ public class FtcRobotControllerActivity extends Activity {
   protected FtcRobotControllerService controllerService;
 
   protected FtcEventLoop eventLoop;
+  public static FtcRobotControllerActivity ActiveContext;
+
+  public void updateMessage(final String s) {
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        TextView messageBox = (TextView) findViewById(R.id.textMessage);
+        messageBox.setText(s);
+      }
+    });
+  }
+
+  public void appendMessage(final String s) {
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        TextView messageBox = (TextView) findViewById(R.id.textMessage);
+        if(messageBox.getText() != "")
+          messageBox.append("\n");
+        messageBox.append(s);
+      }
+    });
+
+  }
 
   protected class RobotRestarter implements Restarter {
 
@@ -142,6 +166,7 @@ public class FtcRobotControllerActivity extends Activity {
 
     utility = new Utility(this);
     context = this;
+    ActiveContext = this;
     entireScreenLayout = (LinearLayout) findViewById(R.id.entire_screen);
     buttonMenu = (ImageButton) findViewById(R.id.menu_buttons);
     buttonMenu.setOnClickListener(new View.OnClickListener() {

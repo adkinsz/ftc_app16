@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="textDeviceName" type="id"/>
+    <item name="menu_buttons" type="id"/>
+    <item name="textWifiDirectStatus" type="id"/>
+    <item name="textRobotStatus" type="id"/>
+    <item name="textOpMode" type="id"/>
+    <item name="textErrorMessage" type="id"/>
+    <item name="textMessage" type="id"/>
+    <item name="textGamepad1" type="id"/>
+    <item name="textGamepad2" type="id"/>
+</resources>
