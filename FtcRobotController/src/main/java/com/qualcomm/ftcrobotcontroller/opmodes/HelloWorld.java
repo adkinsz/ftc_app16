@@ -111,6 +111,7 @@ public class HelloWorld extends OpMode {
   @Override
   public void stop(){
     history += "Stop |";
+    context.updateMessage("History: " + history);
     telemetry.addData("History", history);
   }
 
